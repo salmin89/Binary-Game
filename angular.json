@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "NgBinaryGame"
+    }
+  },
+  "defaultProject": "NgBinaryGame",
+  "cli": {
+    "analytics": false
+  }
 }

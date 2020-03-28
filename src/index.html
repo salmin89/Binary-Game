@@ -14,8 +14,17 @@
     flex-direction: row;
   }
 
+  .col {
+    display: flex;
+    flex-direction: column;
+  }
+
   .flex-break {
     flex-basis: 100%;
+  }
+
+  .flex-center {
+    justify-content: center;
   }
 
 
@@ -42,6 +51,10 @@
     align-items: center;
   }
 
+  h4 {
+    margin-right: 16px;
+  }
+
   
   input {
     font-family: 'Bellota Text', cursive;
@@ -49,12 +62,23 @@
     background-color: #effffb;
     font-size: 24px;
     text-align: center;
-    width: -webkit-fill-available;
     border: none;
+  }
+
+  button {
+    font-family: 'Bellota Text', cursive;
+    height: 50px;
+    background: none;
+    border: 2px solid #50d890;
+    color: #50d890;
+    font-size: 24px;
+    cursor: pointer;
   }
 
   .game {
     margin-top: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   nav {
