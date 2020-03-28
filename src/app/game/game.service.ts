@@ -16,7 +16,9 @@ export default class GameService {
     this.goalTiles = [];
     this.bottomGoalTiles = [];
 
-    this.generateTiles(level);
+    this.generateBottomGoalTiles(level);
+
+    this.generateGameTiles(level);
 
     this.setRandomValues();
 
@@ -34,11 +36,15 @@ export default class GameService {
     this.bottomGoalTiles.forEach(g => g.setValue());
   }
 
-  private generateTiles(level: number) {
-    let goalTile = new GoalTile();
+  private generateBottomGoalTiles(level: number) {
     for (let i = 0; i < level; i++) {
       this.bottomGoalTiles.push(new GoalTile());
     }
+  }
+
+  private generateGameTiles(level: number) {
+    let goalTile = new GoalTile();
+
     for (let i = 0; i < level * level; i++) {
       const gameTile = new GameTile(i);
       gameTile.goalTileXRef = goalTile;
