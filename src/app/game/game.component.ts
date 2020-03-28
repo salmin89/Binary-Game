@@ -21,7 +21,17 @@ export class GameComponent {
     this.setup(this.level);
   }
 
-  setup(level: number) {
+  public handleClick(tile: GameTile) {
+    tile.toggle();
+    this.checkGame();
+  }
+
+  public newGame() {
+    this.gameWon = false;
+    this.setup(this.level);
+  }
+
+  private setup(level: number) {
     const [gameTiles, goalTiles, bottomGoalTiles] = this.gameService.setup(
       level
     );
@@ -30,21 +40,11 @@ export class GameComponent {
     this.bottomGoalTiles = bottomGoalTiles;
   }
 
-  handleClick(tile: GameTile) {
-    tile.toggle();
-    this.checkGame();
-  }
-
-  checkGame() {
+  private checkGame() {
     const won =
       this.goalTiles.every(g => g.valid) &&
       this.bottomGoalTiles.every(g => g.valid);
 
     this.gameWon = won;
-  }
-
-  newGame() {
-    this.gameWon = false;
-    this.setup(this.level);
   }
 }
