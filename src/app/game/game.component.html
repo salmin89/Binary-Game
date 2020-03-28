@@ -5,13 +5,13 @@
             'node-true': tile.active,
             'node': true
         }">
-            {{ tile.active ? 1 : 0}}
+            {{ tile.value }}
         </div>
 
         <div *ngIf="tile.index !== 0 && (tile.index+1) % level === 0" class="goal" [ngClass]="{
-            'goal-achived': goalTiles[((tile.index+1) / level)-1].valid
+            'goal-achived': tile.goalTileXRef.valid
         }">
-            {{ goalTiles[((tile.index+1) / level)-1].value }}
+            {{ tile.goalTileXRef.value }}
 
         </div>
 

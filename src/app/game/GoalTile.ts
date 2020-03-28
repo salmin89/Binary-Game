@@ -8,20 +8,20 @@ export default class GoalTile {
     this.gameTiles.push(gameTile);
   }
   setValue() {
-    const newValue = this.getValue();
+    const newValue = this.getTotalValue();
     this.value = parseInt(newValue, 2);
     if (this.value === 0) {
       this.valid = true;
     }
   }
-  private getValue() {
+  private getTotalValue() {
     return this.gameTiles.reduce((acc: string, curr) => {
-      acc += curr.active ? "1" : "0";
+      acc += curr.value
       return acc;
     }, "");
   }
   validate() {
-    const bin = this.getValue();
+    const bin = this.getTotalValue();
     this.valid = parseInt(bin, 2) === this.value;
   }
 }

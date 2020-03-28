@@ -41,8 +41,8 @@ export default class GameService {
     }
     for (let i = 0; i < level * level; i++) {
       const gameTile = new GameTile(i);
-      gameTile.add(goalTile);
-      gameTile.add(this.bottomGoalTiles[i % level]);
+      gameTile.goalTileXRef = goalTile;
+      gameTile.goalTileYRef = this.bottomGoalTiles[i % level];
       this.gameTiles.push(gameTile);
       goalTile.add(gameTile);
       //update goal tile with a new one
