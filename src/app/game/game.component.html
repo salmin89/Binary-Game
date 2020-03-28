@@ -1,0 +1,32 @@
+<div class="row game">
+
+    <!-- <div *ngFor="let i of Arr(level + 1).fill(1);let last = last">
+
+        <div *ngFor="let y of Arr(level).fill(1)" [ngClass]="{
+            'goal': last,
+            'node': !last
+        }">
+            0
+        </div>
+
+        <div class="goal">0</div>
+    </div> -->
+
+    <ng-container *ngFor="let tile of gameTiles">
+        <div (click)="tile.toggle()" [ngClass]="{
+            'node-true': tile.active,
+            'node': true
+        }">
+            {{ tile.active ? 1 : 0}}
+        </div>
+
+        <!-- {{ tile.index }} -->
+        <div *ngIf="tile.index % level === 0 && tile.index !== 0" class="flex-break">
+            <div class="goal">
+                0
+            </div>
+        </div>
+
+    </ng-container>
+
+</div>
