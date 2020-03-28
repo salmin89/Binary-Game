@@ -12,7 +12,6 @@ export class GameComponent {
   gameTiles: GameTile[] = [];
   goalTiles: GoalTile[] = [];
   bottomGoalTiles: GoalTile[] = [];
-  gameWon: boolean;
   @Input() level: number;
 
   constructor(private gameService: GameService) {}
@@ -21,13 +20,16 @@ export class GameComponent {
     this.setup(this.level);
   }
 
+  get gameWon() {
+    return this.goalTiles.every(g => g.valid) &&
+    this.bottomGoalTiles.every(g => g.valid);
+  }
+
   public handleClick(tile: GameTile) {
     tile.toggle();
-    this.checkGame();
   }
 
   public newGame() {
-    this.gameWon = false;
     this.setup(this.level);
   }
 
@@ -38,13 +40,5 @@ export class GameComponent {
     this.gameTiles = gameTiles;
     this.goalTiles = goalTiles;
     this.bottomGoalTiles = bottomGoalTiles;
-  }
-
-  private checkGame() {
-    const won =
-      this.goalTiles.every(g => g.valid) &&
-      this.bottomGoalTiles.every(g => g.valid);
-
-    this.gameWon = won;
   }
 }
