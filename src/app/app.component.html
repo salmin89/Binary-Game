@@ -1,12 +1,6 @@
 <div class="app">
-
   <div>
-    <div class="row flex-center">
-      <h4>Level: </h4>
-      <input type="number" (input)="onChange($event)" max="10" min="4" [value]="level" />
-    </div>
-
+    <level-selector (levelChange)="onLevelChange($event)" [level]="level"></level-selector>
     <app-game [level]="level"></app-game>
   </div>
-
 </div>
