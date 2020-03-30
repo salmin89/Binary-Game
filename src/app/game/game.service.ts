@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import GameTile from './GameTile';
-import GoalTile from './GoalTile';
+import GameTile from '../shared/GameTile';
+import GoalTile from '../shared/GoalTile';
 
 @Injectable({
   providedIn: 'root'

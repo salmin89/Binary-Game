@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import GameService from './game.service';
-import GoalTile from './GoalTile';
-import GameTile from './GameTile';
+import GoalTile from '../shared/GoalTile';
+import GameTile from '../shared/GameTile';
 
 @Component({
   selector: 'app-game',
