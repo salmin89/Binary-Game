@@ -1,23 +1,23 @@
 import GoalTile from './GoalTile';
 
 export default class GameTile {
-  index: number;
-  active: boolean = false;
-  goalTileXRef: GoalTile;
-  goalTileYRef: GoalTile;
+  public index: number;
+  public goalTileXRef: GoalTile;
+  public goalTileYRef: GoalTile;
+  private active: boolean = false;
 
   constructor(index: number) {
     this.index = index;
     this.active = Math.random() > 0.5;
   }
  
-  toggle() {
+  public toggle() {
     this.active = !this.active;
     this.goalTileXRef.validate()
     this.goalTileYRef.validate()
   }
 
-  get value() {
+  public get value() {
     return this.active ? "1" : "0"
   }
 }
