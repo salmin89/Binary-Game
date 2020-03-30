@@ -1,5 +1,4 @@
 import GoalTile from './GoalTile';
-import { Component } from '@angular/core';
 
 export default class GameTile {
   index: number;
