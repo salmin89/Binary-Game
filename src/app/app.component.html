@@ -3,7 +3,7 @@
   <div>
     <div class="row flex-center">
       <h4>Level: </h4>
-      <input type="number" [ngModel]="level" (ngModelChange)="this.level = $event" max="10" min="4" />
+      <input type="number" (input)="onChange($event)" max="10" min="4" [value]="level" />
     </div>
 
     <app-game [level]="level"></app-game>
