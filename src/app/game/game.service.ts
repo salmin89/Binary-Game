@@ -3,7 +3,7 @@ import GameTile from '../shared/GameTile';
 import GoalTile from '../shared/GoalTile';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export default class GameService {
   private gameTiles = [];
@@ -28,12 +28,12 @@ export default class GameService {
   }
 
   private resetActive() {
-    this.gameTiles.forEach(gameTile => (gameTile.active = false));
+    this.gameTiles.forEach((gameTile) => (gameTile.active = false));
   }
 
   private setRandomValues() {
-    this.goalTiles.forEach(g => g.setValue());
-    this.bottomGoalTiles.forEach(g => g.setValue());
+    this.goalTiles.forEach((g) => g.setValue());
+    this.bottomGoalTiles.forEach((g) => g.setValue());
   }
 
   private generateBottomGoalTiles(level: number) {

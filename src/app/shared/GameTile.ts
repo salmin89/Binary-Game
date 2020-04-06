@@ -10,14 +10,14 @@ export default class GameTile {
     this.index = index;
     this.active = Math.random() > 0.5;
   }
- 
+
   public toggle() {
     this.active = !this.active;
-    this.goalTileXRef.validate()
-    this.goalTileYRef.validate()
+    this.goalTileXRef.validate();
+    this.goalTileYRef.validate();
   }
 
   public get value() {
-    return this.active ? "1" : "0"
+    return this.active ? '1' : '0';
   }
 }

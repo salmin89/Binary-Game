@@ -1,10 +1,10 @@
-import GameTile from "./GameTile";
+import GameTile from './GameTile';
 
 export default class GoalTile {
   public value: number;
   public valid: boolean = false;
   public gameTiles: GameTile[] = [];
-  
+
   public add(gameTile: GameTile) {
     this.gameTiles.push(gameTile);
   }
@@ -24,8 +24,8 @@ export default class GoalTile {
 
   private getTotalValue() {
     return this.gameTiles.reduce((acc: string, curr) => {
-      acc += curr.value
+      acc += curr.value;
       return acc;
-    }, "");
+    }, '');
   }
 }

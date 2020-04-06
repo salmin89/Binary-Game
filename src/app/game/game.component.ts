@@ -1,11 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import GameService from './game.service';
 import GoalTile from '../shared/GoalTile';
 import GameTile from '../shared/GameTile';
 
 @Component({
   selector: 'app-game',
-  templateUrl: './game.component.html'
+  templateUrl: './game.component.html',
 })
 export class GameComponent {
   gameTiles: GameTile[] = [];
@@ -20,8 +20,7 @@ export class GameComponent {
   }
 
   get gameWon() {
-    return this.goalTiles.every(g => g.valid) &&
-    this.bottomGoalTiles.every(g => g.valid);
+    return this.goalTiles.every((g) => g.valid) && this.bottomGoalTiles.every((g) => g.valid);
   }
 
   public handleClick(tile: GameTile) {
@@ -33,9 +32,7 @@ export class GameComponent {
   }
 
   private setup(level: number) {
-    const [gameTiles, goalTiles, bottomGoalTiles] = this.gameService.setup(
-      level
-    );
+    const [gameTiles, goalTiles, bottomGoalTiles] = this.gameService.setup(level);
     this.gameTiles = gameTiles;
     this.goalTiles = goalTiles;
     this.bottomGoalTiles = bottomGoalTiles;

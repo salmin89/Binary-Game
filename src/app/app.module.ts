@@ -7,16 +7,9 @@ import { GameComponent } from './game/game.component';
 import { LevelSelectorComponent } from './level-selector/level-selector.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    GameComponent,
-    LevelSelectorComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule
-  ],
+  declarations: [AppComponent, GameComponent, LevelSelectorComponent],
+  imports: [BrowserModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

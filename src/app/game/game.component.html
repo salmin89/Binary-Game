@@ -1,40 +1,46 @@
 <div class="row game">
-
-    <ng-container *ngFor="let tile of gameTiles">
-        <div (click)="handleClick(tile)" [ngClass]="{
-            'node-true': tile.active,
-            'node': true
-        }">
-            {{ tile.value }}
-        </div>
-
-        <div *ngIf="tile.index !== 0 && (tile.index+1) % level === 0" class="goal" [ngClass]="{
-            'goal-achived': tile.goalTileXRef.valid
-        }">
-            {{ tile.goalTileXRef.value }}
-
-        </div>
-
-        <div *ngIf="tile.index !== 0 && (tile.index+1) % level === 0" class="flex-break">
-        </div>
-
-    </ng-container>
-
-    <div class="row">
-        <div *ngFor="let goalTile of bottomGoalTiles" class="goal" [ngClass]="{
-            'goal-achived': goalTile.valid
-        }">
-            {{ goalTile.value }}
-        </div>
-        <div class="goal">&nbsp;</div>
+  <ng-container *ngFor="let tile of gameTiles">
+    <div
+      (click)="handleClick(tile)"
+      [ngClass]="{
+        'node-true': tile.active,
+        node: true
+      }"
+    >
+      {{ tile.value }}
     </div>
 
-    <div style="width: 100%">&nbsp;</div>
-
-    <div class="col" *ngIf="gameWon">
-        <h2>Congratulations, you won!</h2>
-
-        <button (click)="newGame()">New Game</button>
+    <div
+      *ngIf="tile.index !== 0 && (tile.index + 1) % level === 0"
+      class="goal"
+      [ngClass]="{
+        'goal-achived': tile.goalTileXRef.valid
+      }"
+    >
+      {{ tile.goalTileXRef.value }}
     </div>
 
+    <div *ngIf="tile.index !== 0 && (tile.index + 1) % level === 0" class="flex-break"></div>
+  </ng-container>
+
+  <div class="row">
+    <div
+      *ngFor="let goalTile of bottomGoalTiles"
+      class="goal"
+      [ngClass]="{
+        'goal-achived': goalTile.valid
+      }"
+    >
+      {{ goalTile.value }}
+    </div>
+    <div class="goal">&nbsp;</div>
+  </div>
+
+  <div style="width: 100%;">&nbsp;</div>
+
+  <div class="col" *ngIf="gameWon">
+    <h2>Congratulations, you won!</h2>
+
+    <button (click)="newGame()">New Game</button>
+  </div>
 </div>
