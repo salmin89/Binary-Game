@@ -1,1 +1,158 @@
 /* You can add global styles to this file, and also import other style files */
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-break {
+  flex-basis: 100%;
+}
+
+.flex-center {
+  justify-content: center;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  cursor: default;
+  /* to prevent the cursor to be Text Select when it hovers on score and time counters */
+}
+
+body {
+  background-color: #272727;
+  color: #effffb;
+  font-size: 24px;
+  font-family: "Bellota Text", cursive;
+}
+
+.app {
+  margin: 10vh auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 1440px;
+  align-items: center;
+}
+
+h4 {
+  margin-right: 16px;
+}
+
+input {
+  font-family: "Bellota Text", cursive;
+  color: #272727;
+  background-color: #effffb;
+  font-size: 24px;
+  text-align: center;
+  border: none;
+}
+
+button {
+  font-family: "Bellota Text", cursive;
+  height: 50px;
+  background: none;
+  border: 2px solid #50d890;
+  color: #50d890;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.game {
+  margin-top: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+nav {
+  height: 24vh;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.img-logo {
+  width: 72px;
+  display: block;
+  margin: 0.8rem;
+  cursor: pointer;
+}
+
+.info {
+  height: 17vh;
+}
+
+.info,
+.text-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+#seconds,
+#score,
+.level-label,
+.output-info {
+  font-family: "Lato", sans-serif;
+  display: inline;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.container {
+  width: 100vw;
+  height: 76vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.table-block {
+  transform: translate(0, -20px);
+  border-spacing: 15px;
+}
+
+.node,
+.goal {
+  width: 40px;
+  height: 40px;
+  box-shadow: 0 2px 0 0.3px #000000;
+  transition: 0.3s;
+  text-align: center;
+  margin: 6px;
+}
+
+.goal {
+  border: solid 2px #50d890;
+}
+
+.goal-achived {
+  box-shadow: none;
+  background-color: #50d890;
+  transform: translate(0, 2px);
+}
+
+.node {
+  border: solid 2px #4f98ca;
+  cursor: pointer;
+}
+
+.node-true {
+  box-shadow: none;
+  background-color: #4f98ca;
+  transform: translate(0, 2px);
+}
